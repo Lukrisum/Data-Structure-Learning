@@ -1,7 +1,6 @@
 #include <iostream>
 #include "../../global/status.h"
 #include "./sq-list.h"
-#include <vector>
 using namespace std;
 
 SqList::SqList()
