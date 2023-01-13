@@ -22,12 +22,12 @@ public:
     void Clear();
     bool Empty();
     int Length();
-    Status GetElem(int, ElemType);
+    Status GetElem(int, ElemType &);
     int LocateElem(ElemType, Status (*compare)(ElemType, ElemType));
     Status PriorElem(ElemType, ElemType &);
     Status NextElem(ElemType, ElemType &);
     Status Insert(int, ElemType);
-    Status Delete(int, ElemType&);
+    Status Delete(int, ElemType &);
     Status Traverse(Status (*visit)(ElemType));
 };
 

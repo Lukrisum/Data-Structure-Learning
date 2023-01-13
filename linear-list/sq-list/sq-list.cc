@@ -5,7 +5,7 @@ using namespace std;
 
 SqList::SqList()
 {
-    elem = new (std::nothrow) int[LIST_INIT_SIZE];
+    elem = new (std::nothrow) ElemType[LIST_INIT_SIZE];
     if (!elem)
     {
         exit(OVERFLOW);
@@ -37,7 +37,7 @@ int SqList::Length()
     return length_;
 }
 
-Status SqList::GetElem(int i, ElemType e)
+Status SqList::GetElem(int i, ElemType &e)
 {
     if (i < 1 || i > length_)
     {
@@ -143,4 +143,13 @@ Status SqList::Traverse(Status (*visit)(ElemType))
         }
     }
     return OK;
+}
+
+int main()
+{
+    SqList a;
+    a.Insert(1, 3);
+    int res;
+    a.GetElem(1, res);
+    cout << res;
 }
