@@ -16,10 +16,8 @@ SqList::SqList()
 
 SqList::~SqList()
 {
-    if (elem)
-    {
-        delete[] elem;
-    }
+    // deleting null pointer has no effect
+    delete[] elem;
 }
 
 void SqList::Clear()
@@ -94,7 +92,7 @@ Status SqList::Insert(int i, ElemType e)
     {
         ElemType *old_data = elem;
         elem = new (std::nothrow) int[size_ + LIST_INCREMENT];
-        if (!old_data)
+        if (!elem)
         {
             exit(OVERFLOW);
         }
